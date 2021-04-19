@@ -1,0 +1,93 @@
+﻿<Page x:Class="ZooWork.Pages.PageAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZooWork.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="PageAdd">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+
+
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0 100 0 0">
+
+                <Label Content="Страница добавления данных" FontSize="35"/>
+
+            </StackPanel>
+
+
+            <StackPanel HorizontalAlignment="Left" Margin="15 15 0 0">
+
+                <Button x:Name="ButtonBack" Width="100" Content="Выход" Click="ButtonBack_Click"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" Margin="20 200 0 0" VerticalAlignment="Top">
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Кличка животного"/>
+                    <TextBox x:Name="tbNickname" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Вид живвотного"/>
+                    <TextBox x:Name="tbKind" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Пол"/>
+                    <TextBox x:Name="tbGender" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="ФИО Работника"/>
+                    <TextBox x:Name="tbFullName" Width="150"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" Margin="0 200 0 0" VerticalAlignment="Top">
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Должность работника"/>
+                    <TextBox x:Name="tbPost" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Стаж работника"/>
+                    <TextBox x:Name="tbExperience" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <Label Content="Дата начала работы"/>
+                    <DatePicker x:Name="tbStartDate" Width="150"/>
+                </StackPanel>
+
+
+
+            </StackPanel>
+
+
+
+
+        </Grid>
+
+        <StackPanel Grid.Row="1"   Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="15"  Content="Добаввить" x:Name="addbuton" Click="addbuton_Click"/>
+            <Button Margin="15" Content="Очистить поля" x:Name="deletebutton" Click="deletebutton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
