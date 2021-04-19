@@ -1,0 +1,33 @@
+CREATE DATABASE [Zoo]
+
+USE [Zoo]
+
+CREATE TABLE [Employees]
+(
+[ID] INT  PRIMARY KEY  IDENTITY(1,1),
+[FullName] NVARCHAR(MAX),
+[Post] NVARCHAR(MAX),
+[Experience] NVARCHAR(MAX),
+)
+
+
+CREATE TABLE [Animals]
+(
+[ID] INT  PRIMARY KEY  IDENTITY(1,1),
+[Nickname] NVARCHAR(MAX),
+[Kind] NVARCHAR(MAX),
+[Gender] NVARCHAR(MAX),
+)
+
+
+CREATE TABLE [WorkingWithAnimals] 
+(
+[ID] INT  PRIMARY KEY  IDENTITY(1,1),
+[idEmployees]		INT CONSTRAINT WorkingWithAnimals_idEmployees_Employees_ID REFERENCES [Employees]([ID]),
+[idAnimals]			INT CONSTRAINT WorkingWithAnimals_idAnimals_Animals_ID REFERENCES [Animals]([ID]),
+[StartDate]			DATE
+)
+
+INSERT [Employees]([FullName],[Post],[Experience]) VALUES ('Григорьев.К.А','Дрессироовщик','7 месяцев')
+INSERT [Animals]([Nickname],[Kind],[Gender]) VALUES ('Король','Лев','Мужской')
+INSERT [WorkingWithAnimals]([idEmployees],[idAnimals],[StartDate]) VALUES ('1','1','9-9-9')
